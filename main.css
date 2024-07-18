@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text-color: #ddd;
+}
+
+body {
+  background-color: #1a1a1a;
+  font-family: "Inter", sans-serif;
+}
+
+.hero {
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero.jpg); */
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url(img/hero.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: "Lobster", cursive;
+}
+
+.subtitle {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem 2rem;
+  background-color: #ff3030;
+  border: 1px solid #ff3030;
+
+  transition: all 0.2s ease-out;
+}
+.btn:hover {
+  background-color: transparent;
+  color: #ff3030;
+}
+
+.hero-action {
+  margin-top: 4rem;
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .subtitle {
+    font-size: 2rem;
+  }
+  .btn {
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .title {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+}
