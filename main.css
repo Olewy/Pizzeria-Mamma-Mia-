@@ -7,11 +7,13 @@
 }
 
 :root {
+  --primary-color: #ff3030;
   --text-color: #ddd;
+  --bg-color: #1a1a1a;
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: var(--bg-color);
   font-family: "Inter", sans-serif;
 }
 
@@ -24,16 +26,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
-  height: 100vh;
+  height: calc(100vh - 5rem);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
 }
 
 .title {
-  text-align: center;
   color: #fff;
   margin-bottom: 1rem;
   font-size: 3rem;
@@ -50,36 +53,69 @@ body {
   text-decoration: none;
   color: #fff;
   padding: 1rem 2rem;
-  background-color: #ff3030;
-  border: 1px solid #ff3030;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 
   transition: all 0.2s ease-out;
 }
 .btn:hover {
   background-color: transparent;
-  color: #ff3030;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .hero-action {
   margin-top: 4rem;
 }
 
-@media (min-width: 600px) {
+.nav {
+  height: 5rem;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.nav-item {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12.8px;
+  letter-spacing: 0.1rem;
+  transition: all 0.2s ease-in-out;
+}
+.nav-item:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
   .title {
     font-size: 4rem;
     line-height: 4rem;
   }
   .subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .btn {
     padding: 1.2rem 2.5rem;
   }
+  .nav {
+    gap: 2rem;
+  }
+  .nav-item {
+    font-size: 1rem;
+  }
 }
 
-@media (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   .title {
-    font-size: 6rem;
     line-height: 6rem;
+  }
+  .nav {
+    gap: 4rem;
   }
 }
