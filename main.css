@@ -1,21 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Lobster&display=swap");
 
+/* global stylings */
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
   --primary-color: #ff3030;
   --text-color: #ddd;
   --bg-color: #1a1a1a;
+  --text-color-white: #fff;
 }
 
 body {
   background-color: var(--bg-color);
   font-family: "Inter", sans-serif;
 }
+
+.title {
+  color: var(--text-color-white);
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: "Lobster", cursive;
+}
+
+.subtitle {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.btn {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: var(--text-color-white);
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+
+  transition: all 0.2s ease-out;
+}
+.btn:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.heading {
+  width: fit-content;
+  margin-bottom: 1rem;
+  color: var(--text-color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.heading::after {
+  content: "";
+  display: block;
+  background-color: var(--primary-color);
+  height: 0.1rem;
+}
+
+/* NAV */
+
+.nav {
+  height: 5rem;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.nav-item {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color-white);
+  font-size: 12.8px;
+  letter-spacing: 0.1rem;
+  transition: all 0.2s ease-in-out;
+}
+.nav-item:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* HERO-SECTION */
 
 .hero {
   /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -36,60 +117,81 @@ body {
   text-align: center;
 }
 
-.title {
-  color: #fff;
-  margin-bottom: 1rem;
-  font-size: 3rem;
-  line-height: 3rem;
-  font-family: "Lobster", cursive;
-}
-
-.subtitle {
-  color: var(--text-color);
-  font-size: 1rem;
-}
-
-.btn {
-  text-decoration: none;
-  color: #fff;
-  padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-
-  transition: all 0.2s ease-out;
-}
-.btn:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-  cursor: pointer;
-}
-
 .hero-action {
   margin-top: 4rem;
 }
 
-.nav {
-  height: 5rem;
-  background-color: var(--bg-color);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
+/* ABOUT-SECTION */
+
+.about {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 0 8rem 0;
 }
 
-.nav-item {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
-  font-size: 12.8px;
-  letter-spacing: 0.1rem;
-  transition: all 0.2s ease-in-out;
+.about__text {
+  font-size: 0.9rem;
+  color: var(--text-color);
 }
-.nav-item:hover {
-  color: var(--primary-color);
-  cursor: pointer;
+
+.about-action {
+  margin-top: 2rem;
+}
+
+.about__images {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.about__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.about__image-large {
+  min-width: 50%;
+}
+
+.about__image-small {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+
+  background: url(img/info.jpg), rgba(0, 0, 0, 0.7);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.info__content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.info__table {
+  width: 100%;
+  color: var(--text-color-white);
+  margin-top: 1rem;
+}
+
+.table__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.days {
+  color: var(--text-color);
 }
 
 @media only screen and (min-width: 600px) {
@@ -109,13 +211,30 @@ body {
   .nav-item {
     font-size: 1rem;
   }
+  .about__text {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
   .title {
+    font-size: 6rem;
     line-height: 6rem;
   }
   .nav {
     gap: 4rem;
+  }
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 6rem 0;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .table__item {
+    font-size: 1.2rem;
   }
 }
