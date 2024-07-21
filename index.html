@@ -39,7 +39,7 @@
         </div>
         <div class="about__images">
           <img
-            class="about__image about__image-large"
+            class="about__image about__image--large"
             src="img/about-1.jpg"
             alt="Laden von Außen"
           />
@@ -58,8 +58,9 @@
         </div>
       </section>
       <section id="info" class="info">
-        <div class="info__content">
+        <div class="info__content container">
           <h2 class="heading">Öffnungszeiten</h2>
+
           <table class="info__table">
             <tr class="table__row">
               <td class="table__item"><span class="days">Mo.</span></td>
@@ -92,6 +93,34 @@
           </table>
         </div>
       </section>
+      <section class="contact container">
+        <img
+          class="contact__img"
+          src="img/contact.jpg"
+          alt="Gruppe von Leuten"
+        />
+        <div class="contact__content">
+          <h2 class="heading">Kontakt</h2>
+          <p class="contact__text">(0) 123 4567890</p>
+          <p class="contact__text">info@beispiel.com</p>
+          <p class="contact__text">Beispielstr. 1</p>
+          <p class="contact__text">1337 Beispieldorf</p>
+          <div class="contact__actions">
+            <a href="tel:0123456" class="btn contact-action">Jetzt anrufen!</a>
+            <a class="btn-reverse contact-action" href="mailto:beispiel@gmx.de"
+              >Email schreiben</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <nav class="footer__links container">
+          <a href="#" class="footer__item">Impressum</a
+          ><a href="#" class="footer__item">Datenschutzerklärung</a
+          ><a href="#" class="footer__item">Jobs</a>
+        </nav>
+        <p class="footer__copyright">&copy; 2023 DevKarriere.de</p>
+      </footer>
     </main>
   </body>
 </html>
